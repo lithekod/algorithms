@@ -6,6 +6,8 @@ class Hungarian():
     Class implementing the Hungarian algorithm. Inspired by the Python
     implementation Munkres.
 
+    https://brc2.com/the-algorithm-workshop/
+
     usage:
         Hungarian([[0, 1], [0, 2]]).assignments() # [(0, 1), (1, 0)]
         Hungarian([[0, 1], [0, 2]]).value()       # 3

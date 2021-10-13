@@ -4,6 +4,8 @@ def is_prime(p):
 
     This function uses Fermat's little theorem to quickly remove most
     candidates.
+
+    https://en.wikipedia.org/wiki/Fermat%27s_little_theorem
     """
     if p == 2:
         return True
@@ -13,8 +15,14 @@ def is_prime(p):
 
 
 def primelist(end):
-    """ Primes in the range [0, end] """
-    is_prime = [0, 0] + [1] * (end - 1)
+    """
+    Returns a list of all primes in the range [0, end]
+
+    https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes
+    """
+    is_prime = [1] * (end + 1)
+    is_prime[0] = 0
+    is_prime[1] = 0
     for i in range(int(len(is_prime)**.5 + 1)):
         if is_prime[i]:
             index_length = (end - i*i) // i + 1
